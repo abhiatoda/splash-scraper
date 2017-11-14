@@ -39,7 +39,6 @@ function main(splash, args)
     local last_response = entries[#entries].response
     return {
         url = splash:url(),
-        headers = last_response.headers,
         http_status = last_response.status,
         cookies = splash:get_cookies(),
     }
@@ -71,16 +70,12 @@ print '-'*20
 url = resp_data['url']
 print url
 print '-'*20
-headers = resp_data['headers']
-print headers
-print '-'*20
 http_status = resp_data['http_status']
 print http_status
 print '-'*20
 cookies = resp_data['cookies']
 print cookies
 print '-'*20
-exit()
 
 # cookies = requests.utils.cookiejar_from_dict(resp_data['cookies'])
 br = requests.Session()
